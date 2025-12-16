@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programa de voluntariado del Corredor Biológico. Únete a nuestros proyectos de conservación">
+    <title>Voluntariado - Corredor Biológico Bosque Las Madres</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navegación Principal -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo/logo.png" alt="Logo Corredor Biológico Bosque Las Madres">
+                <h1>Corredor Biológico Bosque Las Madres</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                    <li><a href="aves.html">Aves</a></li>
+                    <li><a href="otras-especies.html">Otras Especies</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="voluntariado.html" class="active">Voluntariado</a></li>
+                    <li><a href="creditos.html">Créditos</a></li>
+                    <li><button class="theme-toggle" aria-label="Cambiar tema" title="Modo oscuro/claro">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">Inicio</a> / <span>Voluntariado</span>
+            </nav>
+
+            <!-- Título de la Página -->
+            <h1 class="page-title">Programa de Voluntariado</h1>
+
+            <!-- Sección: Información del Programa -->
+            <section class="content-section">
+                <h2>¿Qué es el Programa de Voluntariado?</h2>
+                <p>El programa de voluntariado del Corredor Biológico Bosque Las Madres ofrece oportunidades para que personas comprometidas con la conservación participen activamente en nuestros proyectos y actividades.</p>
+            </section>
+
+            <!-- Sección: Requisitos -->
+            <section class="content-section">
+                <h2>Requisitos</h2>
+                <ul class="requirements-list">
+                    <li>Mayor de 18 años (o con autorización de padres/tutores)</li>
+                    <li>Interés en la conservación y educación ambiental</li>
+                    <li>Disponibilidad de tiempo según el proyecto</li>
+                    <li>Compromiso y responsabilidad</li>
+                    <li>Buen estado físico (para algunas actividades)</li>
+                </ul>
+            </section>
+
+            <!-- Sección: Beneficios -->
+            <section class="content-section">
+                <h2>Beneficios de Participar</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h3>Experiencia Práctica</h3>
+                        <p>Obtén experiencia práctica en conservación y educación ambiental</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Conocimiento</h3>
+                        <p>Aprende sobre biodiversidad, ecosistemas y especies locales</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Impacto Positivo</h3>
+                        <p>Contribuye directamente a la conservación del corredor biológico</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Comunidad</h3>
+                        <p>Conoce personas con intereses similares y forma parte de una comunidad</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Actividades Disponibles -->
+            <section class="content-section">
+                <h2>Actividades Disponibles</h2>
+                <div class="activities-list">
+                    <div class="activity-item">
+                        <h3>Monitoreo de Aves</h3>
+                        <p>Participa en el monitoreo y registro de especies de aves en el corredor.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>Mantenimiento de Senderos</h3>
+                        <p>Ayuda en el mantenimiento y limpieza de los senderos del corredor.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>Educación Ambiental</h3>
+                        <p>Colabora en actividades educativas con visitantes y estudiantes.</p>
+                    </div>
+                    <div class="activity-item">
+                        <h3>Investigación</h3>
+                        <p>Participa en proyectos de investigación sobre biodiversidad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de Inscripción -->
+            <section class="content-section">
+                <h2>Formulario de Inscripción</h2>
+                <form class="volunteer-form" id="volunteer-form" novalidate>
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad *</label>
+                            <input type="number" id="edad" name="edad" min="18" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <textarea id="direccion" name="direccion" rows="3"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Disponibilidad</legend>
+                        <div class="form-group">
+                            <label for="disponibilidad">Disponibilidad de Tiempo *</label>
+                            <select id="disponibilidad" name="disponibilidad" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="completa">Tiempo completo</option>
+                                <option value="parcial">Tiempo parcial</option>
+                                <option value="fines-semana">Fines de semana</option>
+                                <option value="esporadico">Esporádico</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Días Disponibles *</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="dias" value="lunes"> Lunes</label>
+                                <label><input type="checkbox" name="dias" value="martes"> Martes</label>
+                                <label><input type="checkbox" name="dias" value="miercoles"> Miércoles</label>
+                                <label><input type="checkbox" name="dias" value="jueves"> Jueves</label>
+                                <label><input type="checkbox" name="dias" value="viernes"> Viernes</label>
+                                <label><input type="checkbox" name="dias" value="sabado"> Sábado</label>
+                                <label><input type="checkbox" name="dias" value="domingo"> Domingo</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Intereses</legend>
+                        <div class="form-group">
+                            <label>Áreas de Interés *</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="intereses" value="monitoreo"> Monitoreo de Aves</label>
+                                <label><input type="checkbox" name="intereses" value="mantenimiento"> Mantenimiento de Senderos</label>
+                                <label><input type="checkbox" name="intereses" value="educacion"> Educación Ambiental</label>
+                                <label><input type="checkbox" name="intereses" value="investigacion"> Investigación</label>
+                                <label><input type="checkbox" name="intereses" value="fotografia"> Fotografía</label>
+                                <label><input type="checkbox" name="intereses" value="otro"> Otro</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Motivación</legend>
+                        <div class="form-group">
+                            <label for="motivacion">¿Por qué deseas participar como voluntario? *</label>
+                            <textarea id="motivacion" name="motivacion" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="experiencia">Experiencia previa (opcional)</label>
+                            <textarea id="experiencia" name="experiencia" rows="4"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="acepta" required>
+                            Acepto los términos y condiciones del programa de voluntariado *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Corredor Biológico Bosque Las Madres</h3>
+                    <p>Dedicados a la conservación y educación ambiental</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                        <li><a href="aves.html">Aves</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Coordinadora: Sofia Stein</p>
+                    <p>Email: sofiastein1@gmail.com</p>
+                    <p>Teléfono: 8723 4884</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Corredor Biológico Bosque Las Madres. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/volunteer.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mapa interactivo del Corredor Biológico con puntos de interés y observación">
+    <title>Mapa Interactivo - Corredor Biológico Bosque Las Madres</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navegación Principal -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo/logo.png" alt="Logo Corredor Biológico Bosque Las Madres">
+                <h1>Corredor Biológico Bosque Las Madres</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                    <li><a href="aves.html">Aves</a></li>
+                    <li><a href="otras-especies.html">Otras Especies</a></li>
+                    <li><a href="mapa.html" class="active">Mapa</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="creditos.html">Créditos</a></li>
+                    <li><button class="theme-toggle" aria-label="Cambiar tema" title="Modo oscuro/claro">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">Inicio</a> / <span>Mapa Interactivo</span>
+            </nav>
+
+            <!-- Título de la Página -->
+            <h1 class="page-title">Mapa Interactivo del Corredor</h1>
+            <p class="page-description">Explora los puntos de interés, senderos y áreas de observación del corredor biológico.</p>
+
+            <!-- Controles del Mapa -->
+            <div class="map-controls">
+                <div class="map-legend">
+                    <h3>Leyenda</h3>
+                    <ul class="legend-list">
+                        <li><span class="legend-icon observation"></span> Puntos de Observación de Aves</li>
+                        <li><span class="legend-icon trail"></span> Senderos Principales</li>
+                        <li><span class="legend-icon conservation"></span> Áreas de Conservación</li>
+                        <li><span class="legend-icon facilities"></span> Instalaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <section class="map-container">
+                <div id="interactive-map" class="map-wrapper">
+                    <!-- El mapa se cargará aquí usando una API de mapas (Google Maps, Leaflet, etc.) -->
+                    <div class="map-placeholder">
+                        <p>Mapa interactivo del Corredor Biológico</p>
+                        <p class="map-note">El mapa se implementará con la API de mapas seleccionada</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de Puntos de Interés -->
+            <section class="points-of-interest">
+                <h2>Puntos de Interés</h2>
+                <div class="points-list" id="points-list">
+                    <div class="point-item" data-point-id="1">
+                        <h3>Punto de Observación 1</h3>
+                        <p>Descripción del punto de observación y las especies que se pueden avistar aquí.</p>
+                        <button class="btn btn-secondary" onclick="focusMapPoint(1)">Ver en Mapa</button>
+                    </div>
+                    <!-- Más puntos de interés -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Corredor Biológico Bosque Las Madres</h3>
+                    <p>Dedicados a la conservación y educación ambiental</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                        <li><a href="aves.html">Aves</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Coordinadora: Sofia Stein</p>
+                    <p>Email: sofiastein1@gmail.com</p>
+                    <p>Teléfono: 8723 4884</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Corredor Biológico Bosque Las Madres. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
+
+
+

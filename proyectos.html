@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos actuales y futuros del Corredor Biológico relacionados con conservación">
+    <title>Proyectos - Corredor Biológico Bosque Las Madres</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navegación Principal -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo/logo.png" alt="Logo Corredor Biológico Bosque Las Madres">
+                <h1>Corredor Biológico Bosque Las Madres</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                    <li><a href="aves.html">Aves</a></li>
+                    <li><a href="otras-especies.html">Otras Especies</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="proyectos.html" class="active">Proyectos</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="creditos.html">Créditos</a></li>
+                    <li><button class="theme-toggle" aria-label="Cambiar tema" title="Modo oscuro/claro">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">Inicio</a> / <span>Proyectos</span>
+            </nav>
+
+            <!-- Título de la Página -->
+            <h1 class="page-title">Proyectos</h1>
+            <p class="page-description">Conoce los proyectos actuales y futuros relacionados con la conservación del corredor biológico.</p>
+
+            <!-- Sección: Proyectos Actuales -->
+            <section class="projects-section">
+                <h2>Proyectos Actuales</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/proyectos/placeholder.jpg" alt="Nombre del proyecto" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Nombre del Proyecto</h3>
+                            <p class="project-description">Descripción breve del proyecto y sus objetivos principales.</p>
+                            <div class="project-details">
+                                <h4>Objetivos:</h4>
+                                <ul>
+                                    <li>Objetivo 1</li>
+                                    <li>Objetivo 2</li>
+                                    <li>Objetivo 3</li>
+                                </ul>
+                                <div class="project-progress">
+                                    <h4>Progreso:</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <p>60% completado</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" onclick="showProjectDetails(1)">Ver Detalles</button>
+                        </div>
+                    </article>
+                    <!-- Más proyectos actuales -->
+                </div>
+            </section>
+
+            <!-- Sección: Proyectos Futuros -->
+            <section class="projects-section">
+                <h2>Proyectos Futuros</h2>
+                <div class="projects-grid">
+                    <article class="project-card future">
+                        <div class="project-image">
+                            <img src="assets/images/proyectos/placeholder.jpg" alt="Nombre del proyecto futuro" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Nombre del Proyecto Futuro</h3>
+                            <p class="project-description">Descripción del proyecto planificado y su importancia para el corredor.</p>
+                            <div class="project-details">
+                                <h4>Descripción:</h4>
+                                <p>Información detallada sobre el proyecto futuro...</p>
+                                <h4>¿Cómo Participar?</h4>
+                                <p>Información sobre cómo la comunidad puede participar en este proyecto.</p>
+                            </div>
+                            <a href="voluntariado.html" class="btn btn-secondary">Participar</a>
+                        </div>
+                    </article>
+                    <!-- Más proyectos futuros -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Corredor Biológico Bosque Las Madres</h3>
+                    <p>Dedicados a la conservación y educación ambiental</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
+                        <li><a href="aves.html">Aves</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Coordinadora: Sofia Stein</p>
+                    <p>Email: sofiastein1@gmail.com</p>
+                    <p>Teléfono: 8723 4884</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Corredor Biológico Bosque Las Madres. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html>
+
+
+
