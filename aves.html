@@ -47,52 +47,70 @@
             </nav>
 
             <!-- Título de la Página -->
-            <h1 class="page-title">Galería de Aves</h1>
-            <p class="page-description">Exploren las aves del Corredor Biológico. Hagan clic en una imagen para ver más detalles y escuchar su canto.</p>
+            <h1 class="page-title">Galería de Aves - Conteo 2024</h1>
+            <p class="page-description">Exploren las 180 especies de aves registradas en el Conteo 2024 del Corredor Biológico. Hagan clic en una imagen para ver más detalles y escuchar su canto.</p>
 
             <!-- Filtros de Búsqueda -->
             <section class="search-filters">
                 <h2>Buscar Aves</h2>
                 <form class="filter-form" id="bird-search-form">
-                    <div class="filter-group">
-                        <label for="search-name">Buscar por nombre:</label>
-                        <input type="text" id="search-name" name="name" placeholder="Nombre del ave...">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="search-name">Buscar por nombre:</label>
+                            <input type="text" id="search-name" name="name" placeholder="Nombre común, científico o en inglés...">
+                        </div>
                     </div>
-                    <div class="filter-group">
-                        <label for="filter-color">Color:</label>
-                        <select id="filter-color" name="color">
-                            <option value="">Todos los colores</option>
-                            <option value="rojo">Rojo</option>
-                            <option value="azul">Azul</option>
-                            <option value="verde">Verde</option>
-                            <option value="amarillo">Amarillo</option>
-                            <option value="negro">Negro</option>
-                            <option value="blanco">Blanco</option>
-                            <option value="multicolor">Multicolor</option>
-                        </select>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="filter-orden">Orden:</label>
+                            <select id="filter-orden" name="orden">
+                                <option value="">Todos los órdenes</option>
+                                <!-- Se llenará dinámicamente -->
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-familia">Familia:</label>
+                            <select id="filter-familia" name="familia">
+                                <option value="">Todas las familias</option>
+                                <!-- Se llenará dinámicamente -->
+                            </select>
+                        </div>
                     </div>
-                    <div class="filter-group">
-                        <label for="filter-size">Tamaño:</label>
-                        <select id="filter-size" name="size">
-                            <option value="">Todos los tamaños</option>
-                            <option value="pequeño">Pequeño</option>
-                            <option value="mediano">Mediano</option>
-                            <option value="grande">Grande</option>
-                        </select>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="filter-color">Color:</label>
+                            <select id="filter-color" name="color">
+                                <option value="">Todos los colores</option>
+                                <!-- Se llenará dinámicamente -->
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-size">Tamaño:</label>
+                            <select id="filter-size" name="size">
+                                <option value="">Todos los tamaños</option>
+                                <option value="pequeño">Pequeño</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-habitat">Hábitat:</label>
+                            <select id="filter-habitat" name="habitat">
+                                <option value="">Todos los hábitats</option>
+                                <option value="bosque">Bosque</option>
+                                <option value="rio">Río</option>
+                                <option value="arboles">Árboles</option>
+                                <option value="suelo">Suelo</option>
+                                <option value="mar">Mar</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="filter-group">
-                        <label for="filter-habitat">Hábitat:</label>
-                        <select id="filter-habitat" name="habitat">
-                            <option value="">Todos los hábitats</option>
-                            <option value="bosque">Bosque</option>
-                            <option value="rio">Río</option>
-                            <option value="arboles">Árboles</option>
-                            <option value="suelo">Suelo</option>
-                        </select>
+                    <div class="filter-actions">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar Filtros</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Buscar</button>
-                    <button type="reset" class="btn btn-secondary">Limpiar</button>
                 </form>
+                <div id="results-count" class="results-count"></div>
             </section>
 
             <!-- Galería de Aves -->
@@ -101,30 +119,11 @@
                     <button class="view-toggle active" data-view="grid" aria-label="Vista de cuadrícula">☰</button>
                     <button class="view-toggle" data-view="list" aria-label="Vista de lista">☷</button>
                 </div>
+                <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                    <p>Cargando aves...</p>
+                </div>
                 <div class="birds-grid" id="birds-container">
-                    <!-- Aves de Ejemplo - Listas para agregar más -->
-                    <a href="ave-detalle.html?id=tucan-pico-iris" class="bird-card" data-color="multicolor" data-size="grande" data-habitat="bosque">
-                        <img src="assets/images/aves/tucan-pico-iris.jpg" alt="Tucán Pico Iris" loading="lazy">
-                        <div class="bird-info">
-                            <h3>Tucán Pico Iris</h3>
-                            <p class="scientific-name"><em>Ramphastos sulfuratus</em></p>
-                        </div>
-                    </a>
-                    <a href="ave-detalle.html?id=quetzal" class="bird-card" data-color="verde" data-size="mediano" data-habitat="bosque">
-                        <img src="assets/images/aves/quetzal.jpg" alt="Quetzal" loading="lazy">
-                        <div class="bird-info">
-                            <h3>Quetzal</h3>
-                            <p class="scientific-name"><em>Pharomachrus mocinno</em></p>
-                        </div>
-                    </a>
-                    <a href="ave-detalle.html?id=colibri-esmeralda" class="bird-card" data-color="verde" data-size="pequeño" data-habitat="arboles">
-                        <img src="assets/images/aves/colibri-esmeralda.jpg" alt="Colibrí Esmeralda" loading="lazy">
-                        <div class="bird-info">
-                            <h3>Colibrí Esmeralda</h3>
-                            <p class="scientific-name"><em>Chlorostilbon assimilis</em></p>
-                        </div>
-                    </a>
-                    <!-- Más tarjetas de aves se agregarán aquí -->
+                    <!-- Las aves se cargarán dinámicamente desde JSON -->
                 </div>
                 <!-- Paginación -->
                 <div class="pagination" id="pagination">
@@ -165,6 +164,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/birds-data.js"></script>
     <script src="js/birds.js"></script>
 </body>
 </html>

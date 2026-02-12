@@ -735,5 +735,251 @@ fieldset {
     }
 }
 
+/* ============================================
+   ESTILOS PARA SISTEMA DE AVES MEJORADO
+   ============================================ */
+
+/* Badge de especie emblemática */
+.emblematic-badge {
+    background: var(--accent-blue);
+    color: var(--surface);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.bird-header-info .emblematic-badge {
+    margin-bottom: 1rem;
+}
+
+/* Filas de filtros mejoradas */
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Contador de resultados */
+.results-count {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-alt);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+}
+
+/* Indicador de carga */
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+}
+
+.loading-indicator p {
+    margin: 0;
+}
+
+/* Sin resultados */
+.no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Grids para página de conteo */
+.routes-grid,
+.emblematic-birds,
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.route-card,
+.emblematic-card,
+.partner-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.route-card:hover,
+.emblematic-card:hover,
+.partner-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.emblematic-card {
+    text-align: center;
+}
+
+.emblematic-card.winner {
+    border: 2px solid var(--accent-blue);
+    background: var(--surface-alt);
+    position: relative;
+}
+
+.emblematic-card.winner::before {
+    content: '🏆';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2rem;
+    background: var(--accent-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.emblematic-card h3 {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+.emblematic-card.winner h3 {
+    color: var(--primary);
+}
+
+/* Número destacado */
+.highlight-number {
+    color: var(--accent-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.results-highlight {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface-alt);
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.results-highlight h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Lista de herramientas */
+.tools-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tool-item {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-blue);
+}
+
+.tool-item h4 {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+.tool-item p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Sección CTA */
+.cta-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+}
+
+/* Botón de audio mejorado */
+.btn-audio.playing {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.btn-audio:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.error-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: var(--surface-alt);
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.error-message h2 {
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+}
+
+/* Responsive para nuevos elementos */
+@media (max-width: 768px) {
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .filter-actions .btn {
+        width: 100%;
+    }
+    
+    .routes-grid,
+    .emblematic-birds,
+    .partners-grid,
+    .tools-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .highlight-number {
+        font-size: 2rem;
+    }
+}
+
 
 
