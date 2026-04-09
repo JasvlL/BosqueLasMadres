@@ -170,11 +170,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         // Imagen
         const img = document.createElement('img');
-        img.src = bird.imagen || 'assets/images/aves/placeholder.jpg';
+        img.src = bird.imagen || '';
         img.alt = bird.nombreComun;
         img.loading = 'lazy';
         img.onerror = function() {
-            this.src = 'assets/images/aves/placeholder.jpg';
+            this.onerror = null;
+            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23e8f5e9"/><text x="150" y="90" font-family="Arial" font-size="40" text-anchor="middle" fill="%234caf50">🐦</text><text x="150" y="130" font-family="Arial" font-size="13" text-anchor="middle" fill="%23666">Sin fotografía</text></svg>';
         };
 
         // Información

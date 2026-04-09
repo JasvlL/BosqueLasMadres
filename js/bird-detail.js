@@ -37,10 +37,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Imagen principal
         const mainImage = document.getElementById('bird-main-image');
         if (mainImage) {
-            mainImage.src = bird.imagen || 'assets/images/aves/placeholder.jpg';
+            mainImage.src = bird.imagen || '';
             mainImage.alt = bird.nombreComun;
             mainImage.onerror = function() {
-                this.src = 'assets/images/aves/placeholder.jpg';
+                this.onerror = null;
+                this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23e8f5e9"/><text x="300" y="170" font-family="Arial" font-size="80" text-anchor="middle" fill="%234caf50">🐦</text><text x="300" y="240" font-family="Arial" font-size="20" text-anchor="middle" fill="%23555">Sin fotografía disponible</text></svg>';
             };
         }
 
@@ -141,6 +142,30 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
+        // Fuentes (verificabilidad)
+        const sourcesSection = document.getElementById('bird-sources-section');
+        const sourcesList = document.getElementById('bird-sources');
+        if (sourcesSection && sourcesList) {
+            sourcesList.innerHTML = '';
+            const fuentes = Array.isArray(bird.fuentes) ? bird.fuentes : [];
+            if (fuentes.length > 0) {
+                fuentes.forEach(url => {
+                    if (!url || typeof url !== 'string') return;
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    a.textContent = url;
+                    li.appendChild(a);
+                    sourcesList.appendChild(li);
+                });
+                sourcesSection.hidden = false;
+            } else {
+                sourcesSection.hidden = true;
+            }
+        }
+
         // Badge emblemática
         if (bird.emblematica) {
             const headerInfo = document.querySelector('.bird-header-info');
@@ -195,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 <div class="error-message">
                     <h2>Error</h2>
                     <p>${message}</p>
-                    <a href="aves.html" class="btn btn-primary">Volver a Galería de Aves</a>
+                    <a href="aves.html" class="btn btn-primary">Volver a Fauna</a>
                 </div>
             `;
         }

@@ -17,7 +17,7 @@ class BirdsDataManager {
             return this.loadPromise;
         }
 
-        this.loadPromise = fetch('data/birds.json')
+        this.loadPromise = fetch('data/birds.json?v=' + Date.now())
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error al cargar datos de aves');

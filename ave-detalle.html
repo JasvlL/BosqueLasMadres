@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e6a6d">
     <meta name="description" content="Ficha detallada del ave con información, fotografías y canto">
     <title>Ficha del Ave - Corredor Biológico Bosque Las Madres</title>
+    <link rel="icon" type="image/png" href="assets/images/aves/image183.png">
+    <link rel="apple-touch-icon" href="assets/images/aves/image183.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,7 +15,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <img src="assets/images/logo/logo.png" alt="Logo Corredor Biológico Bosque Las Madres">
+                <img src="assets/images/aves/image183.png" alt="Logo Corredor Biológico Bosque Las Madres">
                 <h1>Corredor Biológico Bosque Las Madres</h1>
             </div>
             <nav class="main-nav">
@@ -25,12 +28,11 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                     <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
-                    <li><a href="aves.html" class="active">Aves</a></li>
-                    <li><a href="otras-especies.html">Otras Especies</a></li>
+                    <li><a href="conteo-aves-2024.html">Conteo 2024</a></li>
+                    <li><a href="aves.html" class="active">Fauna</a></li>
                     <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="cuidar-naturaleza.html">Cuidar la naturaleza</a></li>
                     <li><a href="creditos.html">Créditos</a></li>
                     <li><button class="theme-toggle" aria-label="Cambiar tema" title="Modo oscuro/claro">🌙</button></li>
                 </ul>
@@ -43,11 +45,11 @@
         <div class="container">
             <!-- Breadcrumbs -->
             <nav class="breadcrumbs" aria-label="Breadcrumb">
-                <a href="index.html">Inicio</a> / <a href="aves.html">Aves</a> / <span id="breadcrumb-name">Nombre del Ave</span>
+                <a href="index.html">Inicio</a> / <a href="aves.html">Fauna</a> / <span id="breadcrumb-name">Nombre del Ave</span>
             </nav>
 
             <!-- Botón Volver -->
-            <a href="aves.html" class="btn-back">← Volver a Galería de Aves</a>
+            <a href="aves.html" class="btn-back">← Volver a Fauna</a>
 
             <!-- Información Principal del Ave -->
             <section class="bird-detail">
@@ -117,6 +119,12 @@
                             <li>Característica 3</li>
                         </ul>
                     </section>
+
+                    <section class="detail-section sources-section" id="bird-sources-section" hidden>
+                        <h2>Fuentes</h2>
+                        <p class="sources-hint">Enlaces para verificar y ampliar la información.</p>
+                        <ul id="bird-sources" class="sources-list"></ul>
+                    </section>
                 </div>
             </section>
         </div>
@@ -135,7 +143,9 @@
                     <ul>
                         <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                         <li><a href="sobre-el-corredor.html">Sobre el Corredor</a></li>
-                        <li><a href="aves.html">Aves</a></li>
+                        <li><a href="conteo-aves-2024.html">Conteo 2024</a></li>
+                        <li><a href="cuidar-naturaleza.html">Cuidar la naturaleza</a></li>
+                        <li><a href="aves.html">Fauna</a></li>
                         <li><a href="proyectos.html">Proyectos</a></li>
                     </ul>
                 </div>
