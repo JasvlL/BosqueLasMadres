@@ -1,31 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
+/* Fuentes cargadas via next/font/google en layout.js (Inter, Outfit, Oswald) */
+@import url('./backgrounds.css');
 
 /* ==========================================================================
-   SISTEMA DE DISEÑO HÍBRIDO (Fusión Día y Noche)
+   SISTEMA DE DISEÃ‘O HÃBRIDO (FusiÃ³n DÃ­a y Noche)
    ========================================================================== */
 
 :root {
-    --font-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-heading: 'Oswald', sans-serif;
-    --font-nav: 'Oswald', sans-serif;
+    --font-base: var(--font-inter, 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    --font-heading: var(--font-oswald, 'Oswald', sans-serif);
+    --font-nav: var(--font-oswald, 'Oswald', sans-serif);
 
     /* Colores Marca Oficiales */
-    --primary: #1E6A6D;           /* Verde petróleo */
+    --primary: #1E6A6D;           /* Verde petrÃ³leo oscuro */
     --secondary: #1BA6A6;         /* Turquesa natural */
     --primary-support: #264E52;   /* Verde bosque oscuro */
     --accent-green: #7FAFA2;      /* Verde musgo */
     --accent-blue: #1F3C4F;       /* Azul profundo */
-    --accent-amber: #CFAE70;      /* Ámbar tierra */
+    --accent-amber: #CFAE70;      /* Ãmbar tierra */
 
-    /* Fusión de Temas (Híbrido) - Base Clara */
-    --bg: #fefbef;                /* Crema orgánico */
-    --surface: #FFFFFF;
-    --surface-alt: #E3F2EF;       /* Verde niebla */
-    --text: #1F1F1F;              /* Gris carbón */
-    --text-muted: #8A8F8D;        /* Gris piedra */
-    --text-light: #C8D6D2;        /* Gris vegetal */
-    --border: #C8D6D2;            /* Gris vegetal */
-    --border-light: #E3F2EF;      /* Verde niebla */
+    /* FusiÃ³n de Temas (HÃ­brido) - Base Clara (Clean UI) */
+    --bg: #FCFCFC;                /* Blanco casi puro y suave */
+    --surface: rgba(255, 255, 255, 0.75); /* Superficie translÃºcida clara */
+    --surface-alt: rgba(255, 255, 255, 0.9); /* Superficie casi opaca */
+    --text: #1F1F1F;              /* Gris carbÃ³n casi negro */
+    --text-muted: #597E7A;        /* Verde grisÃ¡ceo oscuro */
+    --text-light: #8A8F8D;        /* Gris piedra */
+    --border: rgba(0, 0, 0, 0.1); /* Borde sutil oscuro */
+    --border-light: rgba(0, 0, 0, 0.05); /* Borde muy sutil oscuro */
 
     /* Sombras */
     --shadow: 0 4px 12px rgba(30, 106, 109, 0.04);
@@ -38,7 +39,7 @@
     --radius-lg: 20px;
     --radius-full: 9999px;
 
-    /* Transición Estándar */
+    /* TransiciÃ³n EstÃ¡ndar */
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -51,7 +52,7 @@
 }
 
 html {
-    zoom: 0.8;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -59,6 +60,10 @@ body {
     line-height: 1.6;
     color: var(--text);
     background-color: var(--bg);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(27, 166, 166, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(207, 174, 112, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
@@ -67,27 +72,27 @@ body {
 
 /* Bolas de color estilo VisionOS globales (ELIMINADAS PARA UNIFICAR COLOR DE FONDO) */
 
-/* Scrollbar Personalizado (Estética Noche/Marca) */
+/* Scrollbar Personalizado (EstÃ©tica Noche/Marca) */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0b1416;
+    background: rgba(30, 106, 109, 0.06);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1ba6a6;
+    background: var(--secondary);
     border-radius: var(--radius-full);
-    border: 2px solid #0b1416;
+    border: 2px solid var(--bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #1e6a6d;
+    background: var(--primary);
 }
 
-/* Selección */
+/* SelecciÃ³n */
 ::selection {
     background-color: var(--secondary);
     color: #0b1416;
@@ -107,11 +112,17 @@ body {
 }
 
 .main-content {
-    padding: 0; /* Quitamos padding del main para que las secciones se extiendan de borde a borde */
+    padding: 0;
     min-height: 65vh;
+    animation: pageEnter 0.45s ease both;
 }
 
-/* Tipografía */
+@keyframes pageEnter {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* TipografÃ­a */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 600;
@@ -166,11 +177,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-light {
-    background-color: var(--bg);
+    background-color: transparent;
 }
 
 .section-dark {
-    background-color: var(--primary-support);
+    background-color: transparent;
     color: #ffffff;
 }
 
@@ -283,11 +294,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   HEADER Y NAVEGACIÓN (Diseño Glassmorphism VisionOS)
+   HEADER Y NAVEGACIÃ“N (DiseÃ±o Glassmorphism VisionOS)
    ========================================================================== */
 .main-header {
-    background-color: var(--bg);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px) saturate(1.5);
+    -webkit-backdrop-filter: blur(12px) saturate(1.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 1.25rem 0;
     position: sticky;
     top: 0;
@@ -328,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.5rem;
 }
 
-/* Navegación Limpia (Sin óvalo) */
+/* NavegaciÃ³n Limpia (Sin Ã³valo) */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -362,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Hamburguesa móvil oscura */
+/* Hamburguesa mÃ³vil oscura */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -445,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   SECCION NOSOTROS / QUÉ ES EL CORREDOR
+   SECCION NOSOTROS / QUÃ‰ ES EL CORREDOR
    ========================================================================== */
 .about-section {
     position: relative;
@@ -485,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   DISEÑO EN ZIGZAG (Asimetría)
+   DISEÃ‘O EN ZIGZAG (AsimetrÃ­a)
    ========================================================================== */
 .overlap-grid {
     display: flex;
@@ -624,7 +637,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   EJES DE ACCIÓN (Idea 3 - Asymmetric Grid)
+   EJES DE ACCIÃ“N (Idea 3 - Asymmetric Grid)
    ========================================================================== */
 .action-grid {
     display: grid;
@@ -695,8 +708,10 @@ h1, h2, h3, h4, h5, h6 {
 .action-card-content {
     position: relative;
     z-index: 3;
-    padding: 2rem;
+    padding: 1.25rem 2rem;
     color: #edf5f4;
+    text-align: center;
+    width: 100%;
 }
 
 .action-card-content h3 {
@@ -746,6 +761,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
     box-shadow: var(--shadow);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -828,7 +844,7 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-grid > * {
     flex: 0 0 85%;
     max-width: 320px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 @media (min-width: 768px) {
@@ -911,14 +927,14 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     padding: 1.5rem;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: var(--surface);
     backdrop-filter: blur(16px) saturate(1.8);
     -webkit-backdrop-filter: blur(16px) saturate(1.8);
-    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: 1px solid var(--border-light);
 }
 
 .featured-card {
-    background: rgba(255, 255, 255, 0.45);
+    background: var(--surface);
     backdrop-filter: blur(24px) saturate(1.8);
     -webkit-backdrop-filter: blur(24px) saturate(1.8);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
@@ -980,7 +996,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
-/* Catálogo de Aves y Especies */
+/* CatÃ¡logo de Aves y Especies */
 .birds-grid, 
 .species-grid {
     display: grid;
@@ -1067,7 +1083,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   BÚSQUEDA Y FILTROS
+   BÃšSQUEDA Y FILTROS
    ========================================================================== */
 .search-filters {
     background: var(--surface-alt);
@@ -1147,7 +1163,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* Paginación */
+/* PaginaciÃ³n */
 .pagination {
     display: flex;
     align-items: center;
@@ -1344,7 +1360,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .detail-section li::before {
-    content: '•';
+    content: 'â€¢';
     color: var(--secondary);
     font-size: 1.5rem;
     position: absolute;
@@ -1481,12 +1497,11 @@ h1, h2, h3, h4, h5, h6 {
    FOOTER (Glassmorphism VisionOS)
    ========================================================================== */
 .main-footer {
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: transparent;
     color: var(--text);
     padding: 4.5rem 0 2rem;
     margin-top: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
     transition: var(--transition);
 }
 
@@ -1574,8 +1589,45 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
+/* Hover con color de marca por red social */
+.social-btn--facebook:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    color: #ffffff;
+}
+
+.social-btn--instagram:hover {
+    background: linear-gradient(45deg, #F09433, #E6683C, #DC2743, #CC2366, #BC1888);
+    border-color: #DC2743;
+    color: #ffffff;
+}
+
+.social-btn--youtube:hover {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: #ffffff;
+}
+
+.social-btn--twitter:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.footer-email {
+    color: var(--secondary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-email:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
 /* ==========================================================================
-   ELEMENTOS DE PÁGINAS ESPECÍFICAS
+   ELEMENTOS DE PÃGINAS ESPECÃFICAS
    ========================================================================== */
 
 /* Equipo (Sobre Nosotros) */
@@ -1955,7 +2007,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--border);
 }
 
-/* Conteo Aves Page específicos */
+/* Conteo Aves Page especÃ­ficos */
 .routes-grid,
 .emblematic-birds,
 .partners-grid {
@@ -1995,7 +2047,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .emblematic-card.winner::before {
-    content: '🏆';
+    content: 'ðŸ†';
     position: absolute;
     top: -16px;
     right: -16px;
@@ -2138,7 +2190,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto 1.5rem auto;
 }
 
-/* Galería Grid y Lightbox */
+/* GalerÃ­a Grid y Lightbox */
 .gallery-filters {
     display: flex;
     flex-wrap: wrap;
@@ -2445,7 +2497,7 @@ h1, h2, h3, h4, h5, h6 {
         color: #0b1416 !important;
     }
 
-    /* Overlap Asimétrico en Móvil */
+    /* Overlap AsimÃ©trico en MÃ³vil */
     .overlap-item {
         display: flex;
         flex-direction: column;
@@ -2468,7 +2520,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 2rem;
     }
 
-    /* Grids en móvil */
+    /* Grids en mÃ³vil */
     .action-grid {
         display: flex;
         flex-direction: column;
@@ -2573,6 +2625,37 @@ h1, h2, h3, h4, h5, h6 {
         height: 40px;
         font-size: 1.5rem;
     }
+
+    /* Mapa interactivo — altura reducida en móvil */
+    #map {
+        height: 320px;
+        border-radius: var(--radius-md);
+    }
+
+    /* Sobre nosotros — headings inline sin clamp */
+    .sobre-nosotros-page h2 {
+        font-size: clamp(1.4rem, 5vw, 2.5rem) !important;
+    }
+
+    /* Voluntariado — formulario sin padding excesivo */
+    .volunteer-form {
+        padding: 1.5rem !important;
+    }
+
+    /* Contacto — card interior sin padding lateral excesivo */
+    .contacto-page .container > div > div {
+        padding: 2rem 1.25rem !important;
+    }
+
+    /* Iniciativas — breadcrumbs y títulos */
+    .content-section h2 {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    /* Carrusel — ocultar flechas en móvil (scroll táctil nativo) */
+    .carousel-arrow {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -2595,4 +2678,206 @@ h1, h2, h3, h4, h5, h6 {
         align-items: flex-start;
         padding: 1rem;
     }
+}
+
+/* ==========================================================================
+   HOMEPAGE â€” Estilos migrados desde page.js (style jsx global)
+   ========================================================================== */
+
+.hero-premium {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--primary-support);
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: -5%; left: -5%; right: -5%; bottom: -5%;
+  background-image: url('/assets/images/hero-bg-new.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0.85;
+  animation: slowZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  border: 1px solid rgba(30, 106, 109, 0.2);
+  background: rgba(30, 106, 109, 0.05);
+  backdrop-filter: blur(8px);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-icon:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.premium-padding {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.image-hover-effect {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.image-hover-effect img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-hover-effect:hover img {
+  transform: scale(1.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  background-color: var(--surface-alt);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--secondary);
+}
+
+@media (min-width: 992px) {
+  .overlap-item {
+    flex-direction: row;
+    align-items: center;
+  }
+  .overlap-item.reverse {
+    flex-direction: row-reverse;
+  }
+  .overlap-margin-top {
+    margin-top: 6rem;
+  }
+  .overlap-image-wrapper {
+    width: 60%;
+  }
+  .overlap-text-card {
+    width: 50%;
+    margin-left: -10%;
+    z-index: 2;
+  }
+  .overlap-item.reverse .overlap-text-card {
+    margin-left: 0;
+    margin-right: -10%;
+  }
+}
+
+.premium-featured {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, transparent, rgba(227, 242, 239, 0.4));
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featured-header h2 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featured-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }

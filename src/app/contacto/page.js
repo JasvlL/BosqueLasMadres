@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatedDiv } from "@/components/AnimatedSection";
 
 export const metadata = {
   title: "Contacto - Corredor Biológico Bosque Las Madres",
@@ -8,12 +9,12 @@ export const metadata = {
 
 export default function Contacto() {
   return (
-    <div className="contacto-page" style={{ paddingBottom: '6rem' }}>
+    <div className="contacto-page bg-frosted-forest" style={{ paddingBottom: '6rem' }}>
       
       {/* Header Section */}
       <section className="hero-page">
         <div className="hero-page-bg">
-          <Image src="/assets/images/generadas/eje_social.png" alt="Contacto" fill priority />
+          <Image src="/assets/images/generadas/contacto_hero_1782529793555.jpg" alt="Contacto" fill priority />
         </div>
         <div className="hero-page-content">
           <h1>Hablemos de Conservación</h1>
@@ -29,6 +30,7 @@ export default function Contacto() {
         </nav>
         
         {/* Coordinación Card */}
+        <AnimatedDiv>
         <div style={{ backgroundColor: '#fff', padding: '4rem 3rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', borderTop: '5px solid var(--accent-amber)', textAlign: 'center' }}>
           
           <div style={{ width: '80px', height: '80px', backgroundColor: 'var(--surface-alt)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem', margin: '0 auto 2rem auto' }}>
@@ -52,13 +54,15 @@ export default function Contacto() {
             </p>
           </div>
         </div>
+        </AnimatedDiv>
 
-        {/* Disclaimer */}
+        <AnimatedDiv delay={0.15}>
         <section style={{ textAlign: 'center', padding: '2rem', marginTop: '3rem', backgroundColor: 'var(--surface-alt)', borderRadius: 'var(--radius-md)', color: 'var(--text-muted)' }}>
           <p style={{ margin: 0, fontSize: '1rem' }}>
             <strong>Nota importante:</strong> Este canal es exclusivamente para la gestión de proyectos, educación y alianzas del Corredor Biológico Bosque Las Madres. <strong>No procesamos denuncias penales ambientales por esta vía.</strong> Si necesitas reportar un delito ambiental, por favor visita nuestra sección <Link href="/cuidar-naturaleza" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Cuidar la Naturaleza</Link> para conocer las líneas de emergencia oficiales del Estado.
           </p>
         </section>
+        </AnimatedDiv>
 
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
-export default function Proyectos() {
+export default function BitacoraPage() {
   redirect("/iniciativas");
 }
+

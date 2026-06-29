@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,11 +23,11 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Inicio" },
     { href: "/sobre-nosotros", label: "Nosotros" },
-    { href: "/sobre-el-corredor", label: "CBBM Ejes de Acción" },
-    { href: "/aves", label: "Biodiversidad y Galería" },
-    { href: "/proyectos", label: "Proyectos" },
-    { href: "/mapa", label: "Ubicación Geográfica" },
-    { href: "/cuidar-naturaleza", label: "Acciones de Protección" },
+    { href: "/sobre-el-corredor", label: "El Corredor" },
+    { href: "/aves", label: "Biodiversidad" },
+    { href: "/iniciativas", label: "Iniciativas" },
+    { href: "/mapa", label: "Mapa y Visita" },
+    { href: "/voluntariado", label: "Voluntariado" },
     { href: "/contacto", label: "Contacto" },
   ];
 
@@ -36,10 +36,13 @@ export default function Header() {
       <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
         {/* Logo alineado a la izquierda */}
         <a href="/" onClick={handleLogoClick} className="logo" style={{ display: "flex", alignItems: "center", gap: "1rem", textDecoration: "none", color: "inherit" }}>
-          <img
+          <Image
             src="/assets/images/aves/image183.png"
             alt="Logo Corredor Biológico Bosque Las Madres"
-            style={{ width: "216px", height: "auto", margin: "-66px 0 -66px -36px", objectFit: "contain" }}
+            width={216}
+            height={100}
+            priority
+            style={{ margin: "-66px 0 -66px -36px", objectFit: "contain", height: "auto" }}
           />
           <h1 className="logo-text">Corredor Biológico</h1>
         </a>

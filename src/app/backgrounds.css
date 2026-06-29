@@ -1,0 +1,29 @@
+/* ==========================================================================
+   FONDOS UNIFICADOS (Estilo Ejes de Acción Global)
+   ========================================================================== */
+
+/* Todas las clases de fondo ahora son transparentes para que el fondo global (body) brille */
+
+.bg-botanical-mist,
+.bg-topographic,
+.bg-ecosystem-mesh,
+.bg-watercolor-paper,
+.bg-cultural-pattern,
+.bg-river-ripples,
+.bg-falling-leaves,
+.bg-frosted-forest {
+    background: transparent !important;
+    position: relative;
+}
+
+/* Mantener animaciones o decoraciones si no estorban el fondo, pero eliminando colores sólidos */
+.bg-botanical-mist::before, .bg-botanical-mist::after { display: none; }
+.bg-watercolor-paper::before { display: none; }
+.bg-river-ripples::before { display: none; }
+.bg-frosted-forest::before { display: none; }
+
+/* Textos heredan del global oscuro ahora (Clean UI) */
+
+.leaf-anim {
+    display: none;
+}

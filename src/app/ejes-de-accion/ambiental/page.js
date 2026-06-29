@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import EjeTemplate from "@/components/EjeTemplate";
 
 export const metadata = {
   title: "Eje Ambiental",
@@ -7,32 +6,41 @@ export const metadata = {
 };
 
 export default function AmbientalPage() {
-  return (
-    <div className="eje-page">
-      <section className="hero-page">
-        <div className="hero-page-bg">
-          <Image src="/assets/images/generadas/eje_ambiental.png" alt="Ambiental" fill priority />
-        </div>
-        <div className="hero-page-content">
-          <h1>Eje Ambiental</h1>
-          <p>Conservando nuestros ecosistemas, fuentes de agua y biodiversidad.</p>
-        </div>
-      </section>
+  const data = {
+    title: "Eje Ambiental",
+    subtitle: "Conservando nuestros ecosistemas, fuentes de agua y biodiversidad.",
+    heroImage: "/assets/images/generadas/eje_ambiental.png",
+    intro: [
+      "El corazón de nuestro corredor es la protección del medio ambiente. Este eje se enfoca en la conservación activa de los ecosistemas forestales y la protección de las vitales cuencas hidrográficas que sustentan la vida en Limón.",
+      "Trabajamos en proyectos de reforestación, limpieza de ríos y monitoreo de la salud del bosque para garantizar que la conectividad biológica entre las áreas protegidas y la costa se mantenga fuerte, resiliente y llena de vida."
+    ],
+    metrics: [
+      { icon: "🌳", value: "10,000+", label: "Árboles Plantados" },
+      { icon: "💧", value: "5", label: "Ríos Protegidos" },
+      { icon: "🦅", value: "120+", label: "Especies Monitoreadas" }
+    ],
+    actions: [
+      {
+        title: "Reforestación Activa",
+        text: "Llevamos a cabo campañas continuas de plantación de árboles nativos en zonas degradadas para restaurar la conectividad del bosque y ofrecer hogar a la vida silvestre.",
+        image: "/assets/images/generadas/cuidar_naturaleza_hero_1782529815987.jpg"
+      },
+      {
+        title: "Protección de Cuencas Hidrográficas",
+        text: "Monitoreamos y protegemos las principales fuentes de agua que abastecen a las comunidades de Matama y Valle de la Estrella, asegurando agua limpia y abundante.",
+        image: "/assets/images/generadas/hero_paisaje.png"
+      }
+    ],
+    quote: {
+      text: "Proteger el agua y el bosque es garantizar la vida y el futuro de nuestras comunidades por generaciones.",
+      author: "Comité Técnico del Corredor"
+    },
+    gallery: [
+      "/assets/images/generadas/eje_ambiental.png",
+      "/assets/images/generadas/cuidar_naturaleza_hero_1782529815987.jpg",
+      "/assets/images/generadas/hero_paisaje.png"
+    ]
+  };
 
-      <section className="section-light content-section">
-        <div className="container container-narrow">
-          <Link href="/sobre-el-corredor" className="btn-back" style={{ marginBottom: '2rem' }}>
-            ← Volver a Ejes de Acción
-          </Link>
-          <h2 style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>Protección y Conectividad</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-            El corazón de nuestro corredor es la protección del medio ambiente. Este eje se enfoca en la conservación activa de los ecosistemas forestales y la protección de las vitales cuencas hidrográficas que sustentan la vida en Limón.
-          </p>
-          <p style={{ fontSize: '1.1rem' }}>
-            Trabajamos en proyectos de reforestación, limpieza de ríos y monitoreo de la salud del bosque para garantizar que la conectividad biológica entre las áreas protegidas y la costa se mantenga fuerte, resiliente y llena de vida.
-          </p>
-        </div>
-      </section>
-    </div>
-  );
+  return <EjeTemplate {...data} />;
 }

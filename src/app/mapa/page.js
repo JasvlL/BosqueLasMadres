@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
+import { ArrowUp, ArrowLeft, ArrowRight, ArrowDownRight, ArrowDown, CheckCircle } from "lucide-react";
 
 export default function Mapa() {
   const [selectedZone, setSelectedZone] = useState("asp");
@@ -191,11 +192,11 @@ export default function Mapa() {
         </div>
       </section>
 
-      <div className="section-light content-section" style={{ padding: "4rem 0" }}>
+      <div className="section-light content-section bg-river-ripples" style={{ padding: "4rem 0" }}>
         <div className="container">
           {/* Breadcrumbs */}
           <nav className="breadcrumbs" aria-label="Breadcrumb" style={{ marginBottom: "2rem" }}>
-            <Link href="/">Inicio</Link> / <span>Ubicación Geográfica</span>
+            <Link href="/">Inicio</Link> / <span>Mapa y Visita</span>
           </nav>
 
           {/* Selector de Zonas de Interés (Idea 6) */}
@@ -287,6 +288,142 @@ export default function Mapa() {
               de estas localidades es fundamental para la sostenibilidad de las rutas de
               monitoreo.
             </p>
+          </section>
+
+          {/* UBICACIÓN Y LÍMITES */}
+          <section className="content-section" style={{ padding: "3rem 0 0 0" }}>
+            <h2>Ubicación y Límites</h2>
+            <p style={{ marginBottom: "2rem", color: "var(--text-muted)" }}>
+              El CBBM se ubica en los distritos de <strong>Matama</strong> y{" "}
+              <strong>Valle de la Estrella</strong>, cantón y provincia de{" "}
+              <strong>Limón</strong>, dentro del ámbito del{" "}
+              <strong>Área de Conservación La Amistad Caribe (ACLAC)</strong>.
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gap: "1.25rem",
+              }}
+            >
+              {[
+                { Icon: ArrowUp, dir: "Norte", desc: "Cuenca del río Banano" },
+                { Icon: ArrowLeft, dir: "Oeste", desc: "Zona Protectora Río Banano" },
+                { Icon: ArrowRight, dir: "Este", desc: "Mar Caribe" },
+                {
+                  Icon: ArrowDownRight,
+                  dir: "Sur-sureste",
+                  desc: "Refugio de Vida Silvestre Aviarios del Caribe y río Estrella",
+                },
+                {
+                  Icon: ArrowDown,
+                  dir: "Sur",
+                  desc: "Reserva Indígena Tayní y cuenca del río Estrella",
+                },
+              ].map(({ Icon, dir, desc }) => (
+                <div
+                  key={dir}
+                  style={{
+                    background: "var(--surface-alt)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "var(--radius-md)",
+                    padding: "1.5rem",
+                    display: "flex",
+                    gap: "1rem",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      background: "rgba(27,166,166,0.12)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon size={18} color="var(--primary)" />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontWeight: "700",
+                        color: "var(--primary)",
+                        fontSize: "0.85rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        margin: "0 0 0.3rem 0",
+                      }}
+                    >
+                      {dir}
+                    </p>
+                    <p
+                      style={{
+                        color: "var(--text-muted)",
+                        fontSize: "0.95rem",
+                        margin: 0,
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      {desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* NORMAS DE VISITA */}
+          <section className="content-section" style={{ padding: "3rem 0 0 0" }}>
+            <h2>Normas de Visita</h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "1rem",
+                marginTop: "1.5rem",
+              }}
+            >
+              {[
+                "Respetar los senderos marcados",
+                "No extraer plantas, animales ni recursos naturales",
+                "No dejar basura en el corredor",
+                "Mantener silencio para no alterar la fauna",
+                "No alimentar a los animales silvestres",
+                "Respetar las áreas restringidas",
+              ].map((norma) => (
+                <div
+                  key={norma}
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "0.75rem",
+                    background: "var(--surface-alt)",
+                    border: "1px solid var(--border)",
+                    borderRadius: "var(--radius-md)",
+                    padding: "1.1rem 1.25rem",
+                  }}
+                >
+                  <CheckCircle
+                    size={18}
+                    color="var(--secondary)"
+                    style={{ flexShrink: 0, marginTop: "2px" }}
+                  />
+                  <span
+                    style={{
+                      color: "var(--text)",
+                      fontSize: "0.98rem",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    {norma}
+                  </span>
+                </div>
+              ))}
+            </div>
           </section>
         </div>
       </div>
